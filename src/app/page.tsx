@@ -17,7 +17,7 @@ export default function Home() {
     const readyRef = useScrollAnimation()
 
     return (
-        <main className="max-w-7xl mx-auto w-full">
+        <main>
             <Nav />
             <section id="hero">
                 <Hero />
