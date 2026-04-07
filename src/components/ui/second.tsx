@@ -10,7 +10,7 @@ import { Check, Scissors, ShowerHead, Heart } from 'lucide-react';
 
 export default function Second() {
     return (
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-30 mb-100 px-6 md:px-0">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 mb-50 px-6 md:px-0">
 
             <Card className="w-100 bg-black rounded-2xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 shadow-2xl p-4">
                 <CardHeader>
