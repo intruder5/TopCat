@@ -12,7 +12,7 @@ export default function Second() {
     return (
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-30 mb-100 px-6 md:px-0">
 
-            <Card className="w-130 bg-black rounded-2xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 shadow-2xl p-4">
+            <Card className="w-100 bg-black rounded-2xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 shadow-2xl p-4">
                 <CardHeader>
                     <div className="flex items-center justify-between">
                         <div className="border border-neutral-800 p-2 rounded-lg">
@@ -21,7 +21,7 @@ export default function Second() {
                         <span className="text-xs font-mono text-black bg-white px-3 py-1 rounded-md font-bold tracking-wide">$49</span>
                     </div>
                     <CardTitle className="font-mono text-white font-bold text-2xl mt-4">Premium Bath</CardTitle>
-                    <CardDescription className="font-mono text-neutral-400 text-sm leading-relaxed mt-1">
+                    <CardDescription className="font-mono text-neutral-400 text-xs leading-relaxed mt-1">
                         A thorough bath and dry with premium shampoo tailored to your pet's coat type and skin needs.
                     </CardDescription>
                 </CardHeader>
@@ -51,7 +51,7 @@ export default function Second() {
                 </CardFooter>
             </Card>
 
-            <Card className="w-130 bg-black rounded-2xl shadow-2xl border transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 border-neutral-800 p-4">
+            <Card className="w-100 bg-black rounded-2xl shadow-2xl border transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 border-neutral-800 p-4">
                 <CardHeader>
                     <div className="flex items-center justify-between">
                         <div className="border border-neutral-800 p-2 rounded-lg">
@@ -83,14 +83,24 @@ export default function Second() {
                 </CardContent>
 
                 <CardFooter className="mt-4 flex flex-col bg-black border-transparent gap-2">
-                    <button className="w-full bg-white text-black font-mono font-bold py-3 rounded-md hover:bg-neutral-200 hover:cursor-pointer transition-colors">
-                        Popular Choice
-                    </button>
+                    {/* Popular Choice Button with green ping dot */}
+                    <div className="relative w-full">
+                        <button className="w-full bg-white text-black font-mono font-bold py-3 rounded-md hover:bg-neutral-200 hover:cursor-pointer transition-colors">
+                            Popular Choice
+                        </button>
+
+                        {/* Green dot with ping animation */}
+                        <div className="absolute -top-1 -right-1 w-3 h-3">
+                            <div className="absolute inset-0 bg-pink-500 rounded-full animate-ping"></div>
+                            <div className="absolute inset-0 bg-transparent rounded-full"></div>
+                        </div>
+                    </div>
+
                     <p className="text-neutral-300 font-mono text-xs text-center">No commitment · Cancel anytime</p>
                 </CardFooter>
             </Card>
 
-            <Card className="w-130 bg-black rounded-2xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 p-4">
+            <Card className="w-100 bg-black rounded-2xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 p-4">
                 <CardHeader>
                     <div className="flex items-center justify-between">
                         <div className="border border-neutral-800 p-2 rounded-lg">
@@ -99,7 +109,7 @@ export default function Second() {
                         <span className="text-xs font-mono text-black bg-white px-3 py-1 rounded-md font-bold tracking-wide">$29</span>
                     </div>
                     <CardTitle className="font-mono text-white font-bold text-2xl mt-4">Puppy Intro</CardTitle>
-                    <CardDescription className="font-mono text-neutral-400 text-sm leading-relaxed mt-1">
+                    <CardDescription className="font-mono text-neutral-400 text-xs leading-relaxed mt-1">
                         A gentle, positive introduction to grooming for puppies under 6 months to build confidence for future visits.
                     </CardDescription>
                 </CardHeader>

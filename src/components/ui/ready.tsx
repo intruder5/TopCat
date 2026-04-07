@@ -1,6 +1,6 @@
 export default function Ready() {
     return (
-        <div className="flex flex-col items-center pb-80 gap-6">
+        <div className="flex flex-col items-center pb-60 gap-6">
             <h3 className="font-mono font-bold text-5xl pt-30 text-center">Ready to treat your pet?</h3>
             <p className="font-mono text-center text-gray-500 max-w-md leading-relaxed">
                 Join thousands of happy pets and owners who have switched to stress-free mobile grooming.

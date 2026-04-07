@@ -14,7 +14,7 @@ const navItems = [
 
 export default function Nav() {
     return (
-        <div className="flex items-center w-screen justify-around px-10 sticky top-0 bg-white/80 h-24 backdrop-blur-md border-b border-neutral-200 z-50">
+        <div className="flex items-center w-screen justify-around px-10 sticky top-0 bg-white/80 h-15 backdrop-blur-md border-b border-neutral-200 z-50">
             <Logo />
             <NavigationMenu>
                 <NavigationMenuList className="gap-10">
@@ -22,7 +22,7 @@ export default function Nav() {
                         <NavigationMenuItem key={item.label}>
                             <NavigationMenuLink
                                 href={item.href}
-                                className="font-mono text-sm text-neutral-600 cursor-pointer hover:text-black transition-colors duration-150">
+                                className="font-mono text-xs text-neutral-600 cursor-pointer hover:text-black transition-colors duration-150 hover:bg-transparent">
                                 {item.label}
                             </NavigationMenuLink>
                         </NavigationMenuItem>
@@ -36,7 +36,7 @@ export default function Nav() {
 
 function Book() {
     return (
-        <button className="rounded-full cursor-pointer bg-black px-6 py-2.5 text-sm font-medium font-mono text-white transition-all duration-200 hover:bg-gray-900 hover:scale-105 hover:shadow-lg hover:shadow-black/30">
+        <button className="rounded-full text-xs cursor-pointer bg-black px-4  py-2.5 font-medium font-mono text-white transition-all duration-200 hover:bg-gray-900 hover:scale-105 hover:shadow-lg hover:shadow-black/30">
             Book Now
         </button>
     )

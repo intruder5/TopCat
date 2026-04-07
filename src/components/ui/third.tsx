@@ -30,8 +30,8 @@ export default function Third() {
             {/* right side - steps */}
             <div className="flex flex-col font-mono max-w-lg">
                 <div className="flex flex-col gap-4">
-                    <h2 className="font-bold text-4xl md:text-5xl text-center md:text-left">Simplicity at its finest.</h2>
-                    <p className="text-base text-gray-600 max-w-md leading-relaxed text-center md:text-left">
+                    <h2 className="font-bold text-4xl md:text-3xl text-center md:text-left">Simplicity at its finest.</h2>
+                    <p className=" text-gray-600 text-m leading-relaxed text-center md:text-left">
                         We've streamlined the entire process so you can focus on what matters most — spending time with your happy, clean pet.
                     </p>
                 </div>

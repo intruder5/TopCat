@@ -53,7 +53,7 @@ export default function Add() {
     return (
         <div className="flex flex-col md:flex-row gap-6 justify-center px-6">
             {reviews.map((review) => (
-                <Card key={review.name} className="bg-black border border-neutral-800 rounded-2xl w-full md:w-96 flex flex-col justify-between transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105">
+                <Card key={review.name} className="bg-black border border-neutral-800 rounded-2xl w-80 flex flex-col justify-between transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105">
                     <CardHeader>
                         <Stars />
                     </CardHeader>
