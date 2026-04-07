@@ -1,6 +1,6 @@
 export default function Hero() {
     return (
-        <div className="flex flex-col md:flex-row items-center min-h-screen px-6 md:px-100 py-16 md:py-0 gap-10">
+        <div className="flex flex-col md:flex-row items-center min-h-screen px-6 md:px-24 py-16 md:py-0 gap-10">
 
             <div className="flex-1 flex flex-col gap-6 items-center md:items-start text-center md:text-left">
 
@@ -11,7 +11,10 @@ export default function Hero() {
                 </div>
 
                 <h1 className="font-bold text-5xl md:text-8xl font-mono leading-tight">
-                    Premium pet <br/> grooming,<br/> <span className="underline decoration-dashed decoration-blue-400 decoration-4 underline-offset-4">delivered.</span>
+                    Premium pet <br /> grooming,<br />{" "}
+                    <span className="underline decoration-dashed decoration-blue-400 decoration-4 underline-offset-4">
+            delivered.
+          </span>
                 </h1>
 
                 <p className="font-mono text-base md:text-lg max-w-md text-gray-500 leading-relaxed">
@@ -36,7 +39,9 @@ export default function Hero() {
                             <div key={i} className={`w-8 h-8 rounded-full border-2 border-white ${color}`} />
                         ))}
                     </div>
-                    <p className="font-mono text-xs text-neutral-500">Loved by <span className="font-bold text-black">2,000+</span> pet owners</p>
+                    <p className="font-mono text-xs text-neutral-500">
+                        Loved by <span className="font-bold text-black">2,000+</span> pet owners
+                    </p>
                 </div>
 
             </div>
@@ -44,9 +49,13 @@ export default function Hero() {
             <div className="flex-1 flex justify-center relative">
                 {/* glow behind image */}
                 <div className="absolute inset-0 bg-blue-100 rounded-full blur-3xl opacity-30 scale-75" />
-                <img src="/demo.jpg" alt="pet grooming" className="relative w-200 h-170 object-cover rounded-2xl shadow-2xl ring-1 ring-neutral-200" />
+                <img
+                    src="/demo.jpg"
+                    alt="pet grooming"
+                    className="relative w-full max-w-130 h-auto object-cover rounded-2xl shadow-2xl ring-1 ring-neutral-200"
+                />
             </div>
 
         </div>
-    )
+    );
 }
