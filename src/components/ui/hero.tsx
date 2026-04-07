@@ -36,7 +36,7 @@ export default function Hero() {
                             <div key={i} className={`w-8 h-8 rounded-full border-2 border-white ${color}`} />
                         ))}
                     </div>
-                    <p className="font-mono text-xs text-neutral-500">Loved by <span className="font-bold text-black">2,000+</span> pet owners</p>
+                    <p className="font-mono text-xs text-neutral-500">Loved by <span className=" text-black">2,000+</span> pet owners</p>
                 </div>
 
             </div>
