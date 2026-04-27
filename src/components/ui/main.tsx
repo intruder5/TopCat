@@ -132,63 +132,85 @@ export function Navbar() {
 export function Hero() {
     const ref = useScrollAnimation()
     return (
-        <section
-            ref={ref}
-            className="flex justify-center px-5 sm:px-10 md:px-16 lg:px-28"
-        >
-            <div className="flex flex-col md:flex-row items-center justify-center pt-14 pb-20 md:py-0 md:min-h-[calc(100vh-56px)] gap-10 md:gap-16 max-w-6xl w-full">
-                {/* Copy */}
-                <div className="flex-1 flex flex-col gap-5 items-center md:items-start text-center md:text-left w-full md:max-w-xl">
-                    <div className="inline-flex items-center gap-2 bg-neutral-50 border border-neutral-200 rounded-full px-3.5 py-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0 animate-ping" />
-                        <p className="font-mono text-[10px] text-neutral-500 tracking-wide">Now available in your area</p>
-                    </div>
+        <section ref={ref} className="relative overflow-hidden border-b border-neutral-100">
 
-                    <h1 className="font-bold text-[2.6rem] leading-[1.1] tracking-tight font-mono sm:text-5xl lg:text-6xl">
-                        Premium pet<br />grooming,{" "}
-                        <span className="underline decoration-wavy decoration-pink-400 decoration-[3px] underline-offset-[6px]">
-                        delivered.
-                    </span>
-                    </h1>
+            {/* Subtle dot-grid background */}
+            <div
+                className="absolute inset-0 opacity-[0.035]"
+                style={{
+                    backgroundImage: "radial-gradient(circle, #000 1px, transparent 1px)",
+                    backgroundSize: "28px 28px",
+                }}
+            />
 
-                    <p className="font-mono text-sm text-neutral-500 leading-[1.8] max-w-[30ch] sm:max-w-sm">
-                        No more stressful car rides. Our mobile grooming vans come directly to your driveway for a stress-free, one-on-one spa experience.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                        <button className="bg-black hover:bg-neutral-900 font-mono font-bold rounded-full text-white text-sm px-6 py-3 cursor-pointer transition-colors duration-200">
-                            Book Appointment
-                        </button>
-                        <button className="border border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50 font-mono font-bold rounded-full text-sm px-6 py-3 cursor-pointer transition-colors duration-200">
-                            View Services
-                        </button>
-                    </div>
-
-                    <div className="flex items-center gap-3 pt-1">
-                        <div className="flex -space-x-2">
-                            {["bg-pink-200", "bg-blue-200", "bg-yellow-200", "bg-green-200"].map((color, i) => (
-                                <div key={i} className={`w-7 h-7 rounded-full border-2 border-white ${color}`} />
-                            ))}
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                            <Stars />
-                            <p className="font-mono text-[11px] text-neutral-500">
-                                <span className="text-black font-bold">2,000+</span> happy pet owners
-                            </p>
-                        </div>
-                    </div>
+            {/* Top headline band */}
+            <div className="relative z-10 flex flex-col items-center text-center px-5 pt-16 pb-10 sm:pt-20 sm:pb-12 gap-5 max-w-4xl mx-auto">
+                <div className="inline-flex items-center gap-2 bg-neutral-50 border border-neutral-200 rounded-full px-3.5 py-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0 animate-ping" />
+                    <p className="font-mono text-[10px] text-neutral-500 tracking-wide">Now available in your area</p>
                 </div>
 
-                {/* Image */}
-                <div className="flex-1 flex justify-center relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto">
-                    <div className="absolute inset-0 bg-pink-100 rounded-3xl blur-3xl opacity-40 scale-90" />
+                <h1 className="font-bold font-mono leading-[1.08] tracking-tight text-[2.8rem] sm:text-6xl lg:text-7xl">
+                    Premium pet grooming,{" "}
+                    <span className="underline  decoration-[3px] underline-offset-[8px]">
+                        delivered.
+                    </span>
+                </h1>
+
+                <p className="font-mono text-sm text-neutral-500 leading-[1.8] max-w-md">
+                    No more stressful car rides. Our mobile grooming vans come directly to your driveway for a stress-free, one-on-one spa experience.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto pt-1">
+                    <button className="bg-black hover:bg-neutral-900 font-mono font-bold rounded-full text-white text-sm px-7 py-3 cursor-pointer transition-colors duration-200 w-full sm:w-fit">
+                        Book Appointment
+                    </button>
+                    <button className="border border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50 font-mono font-bold rounded-full text-sm px-7 py-3 cursor-pointer transition-colors duration-200 w-full sm:w-fit">
+                        View Services
+                    </button>
+                </div>
+            </div>
+
+            {/* Image with floating chips */}
+            <div className="relative z-10 px-5 sm:px-10 lg:px-16 pb-16 sm:pb-20">
+                <div className="relative max-w-3xl mx-auto">
+
+                    {/* Main image */}
                     <img
                         src="/demo.jpg"
                         alt="Pet grooming"
-                        className="relative w-full aspect-square object-cover rounded-2xl ring-1 ring-neutral-200"
+                        className="w-full h-[340px] sm:h-[460px] lg:h-[520px] object-cover rounded-2xl ring-1 ring-neutral-200"
                     />
+
+                    {/* Chip — top left */}
+                    <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-white/95 backdrop-blur-sm border border-neutral-200 rounded-xl px-3 py-2 shadow-sm">
+                        <p className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest">Happy clients</p>
+                        <p className="font-mono text-base font-bold text-black leading-tight">2,000+</p>
+                    </div>
+
+                    {/* Chip — top right */}
+                    <div className="absolute top-4 right-4 sm:top-6 sm:right-6 bg-white/95 backdrop-blur-sm border border-neutral-200 rounded-xl px-3 py-2 shadow-sm">
+                        <div className="flex items-center gap-1 mb-0.5">
+                            <Stars />
+                        </div>
+                        <p className="font-mono text-[10px] text-neutral-500">4.5 avg rating</p>
+                    </div>
+
+                    {/* Chip — bottom left */}
+                    <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-black/90 backdrop-blur-sm rounded-xl px-3 py-2 shadow-sm flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-green-400 shrink-0" />
+                        <p className="font-mono text-[10px] text-white">Same-day booking available</p>
+                    </div>
+
+                    {/* Chip — bottom right */}
+                    <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-white/95 backdrop-blur-sm border border-neutral-200 rounded-xl px-3 py-2 shadow-sm">
+                        <p className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest">Experience</p>
+                        <p className="font-mono text-base font-bold text-black leading-tight">10+ yrs</p>
+                    </div>
+
                 </div>
             </div>
+
         </section>
     )
 }
@@ -353,7 +375,7 @@ export function Reviews() {
                         className="bg-neutral-950 p-6 sm:p-7 flex flex-col gap-4 hover:bg-neutral-900 transition-colors duration-300"
                     >
                         <Stars />
-                        <p className="font-mono text-neutral-400 text-xs leading-[1.9] flex-1">{review.quote}</p>
+                        <p className="font-mono text-neutral-400 text-xs leading-[1.9] flex-1">"{review.quote}"</p>
                         <div className="pt-4 border-t border-neutral-800">
                             <p className="font-mono text-white font-bold text-xs">{review.name}</p>
                             <p className="font-mono text-neutral-600 text-[11px] mt-0.5">{review.title}</p>
@@ -453,7 +475,7 @@ export function Footer() {
                 </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-between items-center border-t border-neutral-100 mt-8 pt-5 gap-3 max-w-6xl mx-auto">
+            <div className="flex flex-col sm:flex-row justify-between items-center border-t border-neutral-400 mt-8 pt-5 gap-3 max-w-6xl mx-auto">
                 <p className="text-[11px] text-neutral-400">© 2026 TopCat. All rights reserved.</p>
                 <div className="flex gap-6">
                     {["Instagram", "Facebook", "TikTok"].map((s) => (
