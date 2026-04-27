@@ -152,7 +152,7 @@ export function Hero() {
 
                 <h1 className="font-bold font-mono leading-[1.08] tracking-tight text-[2.8rem] sm:text-6xl lg:text-7xl">
                     Premium pet grooming,{" "}
-                    <span className="underline  decoration-[3px] underline-offset-[8px]">
+                    <span className="decoration-[3px] underline-offset-[8px]">
                         delivered.
                     </span>
                 </h1>
