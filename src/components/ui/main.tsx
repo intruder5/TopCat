@@ -99,8 +99,8 @@ function SectionLabel({ text, light = false }: { text: string; light?: boolean }
 
 export function Navbar() {
     return (
-        <header className="flex items-center w-full justify-between px-5 sm:px-10 sticky top-0 bg-white/90 h-14 backdrop-blur-md border-b border-neutral-300 z-50">
-            <img className="h-20 w-auto" src="/topcat.png" alt="TopCat logo" />
+        <header className="flex items-center w-full justify-between px-5 sm:px-10 sticky top-0 bg-white/90 h-14 backdrop-blur-md border-b border-neutral-100 z-50">
+            <img className="h-8 w-auto" src="/topcat.png" alt="TopCat logo" />
 
             <nav className="hidden md:flex items-center gap-8">
                 {navItems.map((item) => (
@@ -146,13 +146,13 @@ export function Hero() {
             {/* Top headline band */}
             <div className="relative z-10 flex flex-col items-center text-center px-5 pt-16 pb-10 sm:pt-20 sm:pb-12 gap-5 max-w-4xl mx-auto">
                 <div className="inline-flex items-center gap-2 bg-neutral-50 border border-neutral-200 rounded-full px-3.5 py-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0 animate-ping" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0" />
                     <p className="font-mono text-[10px] text-neutral-500 tracking-wide">Now available in your area</p>
                 </div>
 
                 <h1 className="font-bold font-mono leading-[1.08] tracking-tight text-[2.8rem] sm:text-6xl lg:text-7xl">
                     Premium pet grooming,{" "}
-                    <span className="decoration-[3px] underline-offset-[8px]">
+                    <span className="underline decoration-wavy decoration-pink-400 decoration-[3px] underline-offset-[8px]">
                         delivered.
                     </span>
                 </h1>
@@ -161,7 +161,13 @@ export function Hero() {
                     No more stressful car rides. Our mobile grooming vans come directly to your driveway for a stress-free, one-on-one spa experience.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto pt-1">
+            </div>
+
+            {/* Image + buttons — reversed on mobile so image comes first */}
+            <div className="relative z-10 flex flex-col-reverse sm:flex-col gap-6 px-5 sm:px-10 lg:px-16 pb-16 sm:pb-20">
+
+                {/* Buttons — sit below image on mobile, above on sm+ (via reverse) */}
+                <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto sm:justify-center">
                     <button className="bg-black hover:bg-neutral-900 font-mono font-bold rounded-full text-white text-sm px-7 py-3 cursor-pointer transition-colors duration-200 w-full sm:w-fit">
                         Book Appointment
                     </button>
@@ -169,47 +175,48 @@ export function Hero() {
                         View Services
                     </button>
                 </div>
-            </div>
 
-            {/* Image with floating chips */}
-            <div className="relative z-10 px-5 sm:px-10 lg:px-16 pb-16 sm:pb-20">
-                <div className="relative max-w-3xl mx-auto">
+                {/* Image with floating chips */}
+                <div className="">
+                    <div className="relative max-w-3xl mx-auto">
 
-                    {/* Main image */}
-                    <img
-                        src="/demo.jpg"
-                        alt="Pet grooming"
-                        className="w-full h-[340px] sm:h-[460px] lg:h-[520px] object-cover rounded-2xl ring-1 ring-neutral-200"
-                    />
+                        {/* Main image */}
+                        <img
+                            src="/demo.jpg"
+                            alt="Pet grooming"
+                            className="w-full h-[340px] sm:h-[460px] lg:h-[520px] object-cover rounded-2xl ring-1 ring-neutral-200"
+                        />
 
-                    {/* Chip — top left */}
-                    <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-white/95 backdrop-blur-sm border border-neutral-200 rounded-xl px-3 py-2 shadow-sm">
-                        <p className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest">Happy clients</p>
-                        <p className="font-mono text-base font-bold text-black leading-tight">2,000+</p>
-                    </div>
-
-                    {/* Chip — top right */}
-                    <div className="absolute top-4 right-4 sm:top-6 sm:right-6 bg-white/95 backdrop-blur-sm border border-neutral-200 rounded-xl px-3 py-2 shadow-sm">
-                        <div className="flex items-center gap-1 mb-0.5">
-                            <Stars />
+                        {/* Chip — top left */}
+                        <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-white/95 backdrop-blur-sm border border-neutral-200 rounded-xl px-3 py-2 shadow-sm">
+                            <p className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest">Happy clients</p>
+                            <p className="font-mono text-base font-bold text-black leading-tight">2,000+</p>
                         </div>
-                        <p className="font-mono text-[10px] text-neutral-500">4.5 avg rating</p>
-                    </div>
 
-                    {/* Chip — bottom left */}
-                    <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-black/90 backdrop-blur-sm rounded-xl px-3 py-2 shadow-sm flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-green-400 shrink-0" />
-                        <p className="font-mono text-[10px] text-white">Same-day booking available</p>
-                    </div>
+                        {/* Chip — top right */}
+                        <div className="absolute top-4 right-4 sm:top-6 sm:right-6 bg-white/95 backdrop-blur-sm border border-neutral-200 rounded-xl px-3 py-2 shadow-sm">
+                            <div className="flex items-center gap-1 mb-0.5">
+                                <Stars />
+                            </div>
+                            <p className="font-mono text-[10px] text-neutral-500">5.0 avg rating</p>
+                        </div>
 
-                    {/* Chip — bottom right */}
-                    <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-white/95 backdrop-blur-sm border border-neutral-200 rounded-xl px-3 py-2 shadow-sm">
-                        <p className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest">Experience</p>
-                        <p className="font-mono text-base font-bold text-black leading-tight">10+ yrs</p>
-                    </div>
+                        {/* Chip — bottom left */}
+                        <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-black/90 backdrop-blur-sm rounded-xl px-3 py-2 shadow-sm flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-green-400 shrink-0" />
+                            <p className="font-mono text-[10px] text-white">Same-day booking available</p>
+                        </div>
 
-                </div>
-            </div>
+                        {/* Chip — bottom right */}
+                        <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-white/95 backdrop-blur-sm border border-neutral-200 rounded-xl px-3 py-2 shadow-sm">
+                            <p className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest">Experience</p>
+                            <p className="font-mono text-base font-bold text-black leading-tight">10+ yrs</p>
+                        </div>
+
+                    </div>
+                </div>{/* end image */}
+
+            </div>{/* end image+buttons wrapper */}
 
         </section>
     )
@@ -447,7 +454,7 @@ export function Footer() {
     ]
 
     return (
-        <footer className="border-t border-neutral-400 px-5 sm:px-10 lg:px-16 pt-12 pb-6 font-mono">
+        <footer className="border-t border-neutral-100 px-5 sm:px-10 lg:px-16 pt-12 pb-6 font-mono">
             <div className="flex flex-col sm:flex-row justify-between gap-10 sm:gap-8 max-w-6xl mx-auto">
                 <div className="flex flex-col gap-3 shrink-0 max-w-[200px]">
                     <p className="font-bold text-black text-base">TopCat</p>
@@ -475,7 +482,7 @@ export function Footer() {
                 </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-between items-center border-t border-neutral-400 mt-8 pt-5 gap-3 max-w-6xl mx-auto">
+            <div className="flex flex-col sm:flex-row justify-between items-center border-t border-neutral-100 mt-8 pt-5 gap-3 max-w-6xl mx-auto">
                 <p className="text-[11px] text-neutral-400">© 2026 TopCat. All rights reserved.</p>
                 <div className="flex gap-6">
                     {["Instagram", "Facebook", "TikTok"].map((s) => (
