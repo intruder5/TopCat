@@ -140,7 +140,7 @@ export function Hero() {
                 {/* Copy */}
                 <div className="flex-1 flex flex-col gap-5 items-center md:items-start text-center md:text-left w-full md:max-w-xl">
                     <div className="inline-flex items-center gap-2 bg-neutral-50 border border-neutral-200 rounded-full px-3.5 py-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0 animate-ping" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0" />
                         <p className="font-mono text-[10px] text-neutral-500 tracking-wide">Now available in your area</p>
                     </div>
 
@@ -202,7 +202,7 @@ export function HowItWorks() {
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center max-w-5xl mx-auto">
 
                 {/* Imgblock — constrained so fixed heights don't overflow */}
-                <div className="flex justify-center w-full lg:w-auto lg:shrink-0">
+                <div className="flex justify-center items-center w-full lg:w-auto lg:shrink-0 mx-auto">
                     <Imgblock />
                 </div>
 
@@ -425,7 +425,7 @@ export function Footer() {
     ]
 
     return (
-        <footer className="border-t border-neutral-400 px-5 sm:px-10 lg:px-16 pt-12 pb-8 font-mono">
+        <footer className="border-t border-neutral-400 px-5 sm:px-10 lg:px-16 pt-12 pb-6 font-mono">
             <div className="flex flex-col sm:flex-row justify-between gap-10 sm:gap-8 max-w-6xl mx-auto">
                 <div className="flex flex-col gap-3 shrink-0 max-w-[200px]">
                     <p className="font-bold text-black text-base">TopCat</p>
@@ -453,7 +453,7 @@ export function Footer() {
                 </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-between items-center border-t border-neutral-100 mt-10 pt-6 gap-3 max-w-6xl mx-auto">
+            <div className="flex flex-col sm:flex-row justify-between items-center border-t border-neutral-100 mt-8 pt-5 gap-3 max-w-6xl mx-auto">
                 <p className="text-[11px] text-neutral-400">© 2026 TopCat. All rights reserved.</p>
                 <div className="flex gap-6">
                     {["Instagram", "Facebook", "TikTok"].map((s) => (
