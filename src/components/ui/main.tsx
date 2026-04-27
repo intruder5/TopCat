@@ -140,7 +140,7 @@ export function Hero() {
                 {/* Copy */}
                 <div className="flex-1 flex flex-col gap-5 items-center md:items-start text-center md:text-left w-full md:max-w-xl">
                     <div className="inline-flex items-center gap-2 bg-neutral-50 border border-neutral-200 rounded-full px-3.5 py-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0 animate-ping" />
                         <p className="font-mono text-[10px] text-neutral-500 tracking-wide">Now available in your area</p>
                     </div>
 
@@ -353,7 +353,7 @@ export function Reviews() {
                         className="bg-neutral-950 p-6 sm:p-7 flex flex-col gap-4 hover:bg-neutral-900 transition-colors duration-300"
                     >
                         <Stars />
-                        <p className="font-mono text-neutral-400 text-xs leading-[1.9] flex-1">"{review.quote}"</p>
+                        <p className="font-mono text-neutral-400 text-xs leading-[1.9] flex-1">{review.quote}</p>
                         <div className="pt-4 border-t border-neutral-800">
                             <p className="font-mono text-white font-bold text-xs">{review.name}</p>
                             <p className="font-mono text-neutral-600 text-[11px] mt-0.5">{review.title}</p>
