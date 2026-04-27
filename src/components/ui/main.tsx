@@ -100,7 +100,7 @@ function SectionLabel({ text, light = false }: { text: string; light?: boolean }
 
 export function Navbar() {
     return (
-        <header className="flex items-center w-full justify-between px-5 sm:px-10 sticky top-0 bg-white/90 h-14 backdrop-blur-md border-b border-neutral-100 z-50">
+        <header className="flex items-center w-full justify-between px-5 sm:px-10 sticky top-0 bg-white/90 h-14 backdrop-blur-md border-b border-neutral-300 z-50">
             <img className="h-20 w-auto" src="/topcat.png" alt="TopCat logo" />
 
             <nav className="hidden md:flex items-center gap-8">
@@ -502,7 +502,7 @@ export function Footer() {
     ]
 
     return (
-        <footer className="border-t border-neutral-100 px-5 sm:px-10 lg:px-16 pt-12 pb-6 font-mono">
+        <footer className="border-t border-neutral-400 px-5 sm:px-10 lg:px-16 pt-12 pb-6 font-mono">
             <div className="flex flex-col sm:flex-row justify-between gap-10 sm:gap-8 max-w-6xl mx-auto">
                 <div className="flex flex-col gap-3 shrink-0 max-w-[200px]">
                     <p className="font-bold text-black text-base">TopCat</p>
@@ -530,7 +530,7 @@ export function Footer() {
                 </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-between items-center border-t border-neutral-100 mt-8 pt-5 gap-3 max-w-6xl mx-auto">
+            <div className="flex flex-col sm:flex-row justify-between items-center border-t border-neutral-400 mt-8 pt-5 gap-3 max-w-6xl mx-auto">
                 <p className="text-[11px] text-neutral-400">© 2026 TopCat. All rights reserved.</p>
                 <div className="flex gap-6">
                     {["Instagram", "Facebook", "TikTok"].map((s) => (
