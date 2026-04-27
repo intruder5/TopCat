@@ -2,7 +2,8 @@
 
 import Imgblock from "@/components/ui/imgblock"
 import { useScrollAnimation } from "@/components/ui/anim"
-import { Star, Check, Scissors, ShowerHead, Heart, ArrowRight } from "lucide-react"
+import { Star, Check, Scissors, ShowerHead, Heart, ArrowRight, Menu, X } from "lucide-react"
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -99,7 +100,7 @@ function SectionLabel({ text, light = false }: { text: string; light?: boolean }
 
 export function Navbar() {
     return (
-        <header className="flex items-center w-full justify-between px-5 sm:px-10 sticky top-0 bg-white/90 h-14 backdrop-blur-md border-b border-neutral-300 z-50">
+        <header className="flex items-center w-full justify-between px-5 sm:px-10 sticky top-0 bg-white/90 h-14 backdrop-blur-md border-b border-neutral-100 z-50">
             <img className="h-20 w-auto" src="/topcat.png" alt="TopCat logo" />
 
             <nav className="hidden md:flex items-center gap-8">
@@ -121,8 +122,55 @@ export function Navbar() {
                 Book Now <ArrowRight className="w-3 h-3" />
             </a>
 
-            {/* Mobile: wire your SheetTrigger here */}
-            <div className="md:hidden" id="mobile-menu-trigger" />
+            {/* Mobile sheet */}
+            <Sheet>
+                {/* ✅ SheetTrigger asChild — renders AS the button, no nesting */}
+                <SheetTrigger className="md:hidden p-2 -mr-1 rounded-lg hover:bg-neutral-100 transition-colors cursor-pointer">
+                    <Menu className="w-5 h-5 text-neutral-700" />
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[280px] p-0 font-mono">
+
+                    {/* Sheet header */}
+                    <div className="flex items-center justify-between px-6 h-14 border-b border-neutral-100">
+                        <span className="font-bold text-sm text-black">TopCat</span>
+                        {/* ✅ SheetClose asChild — renders AS the button, no nested button */}
+                        <SheetClose className="p-1.5 rounded-lg hover:bg-neutral-100 transition-colors cursor-pointer">
+                        </SheetClose>
+                    </div>
+
+                    {/* Nav links */}
+                    <nav className="flex flex-col px-4 pt-4 pb-6 gap-1">
+                        {navItems.map((item) => (
+                            <a
+                                key={item.label}
+                                href={item.href}
+                                className="text-sm text-neutral-600 hover:text-black hover:bg-neutral-50 px-3 py-2.5 rounded-lg transition-colors"
+                            >
+                                {item.label}
+                            </a>
+                        ))}
+                    </nav>
+
+                    <div className="mx-4 border-t border-neutral-100" />
+
+                    {/* CTAs */}
+                    <div className="px-4 pt-6 flex flex-col gap-3">
+                        <a
+                            href="#pricing"
+                            className="flex items-center justify-center gap-2 bg-black text-white text-sm font-bold rounded-full px-5 py-3 hover:bg-neutral-900 transition-colors"
+                        >
+                            Book Appointment <ArrowRight className="w-3.5 h-3.5" />
+                        </a>
+                        <a
+                            href="#pricing"
+                            className="flex items-center justify-center text-sm font-bold rounded-full px-5 py-3 border border-neutral-200 hover:bg-neutral-50 transition-colors"
+                        >
+                            View Services
+                        </a>
+                    </div>
+
+                </SheetContent>
+            </Sheet>
         </header>
     )
 }
@@ -198,7 +246,7 @@ export function Hero() {
                             <div className="flex items-center gap-1 mb-0.5">
                                 <Stars />
                             </div>
-                            <p className="font-mono text-[10px] text-neutral-500">4.5 avg rating</p>
+                            <p className="font-mono text-[10px] text-neutral-500">5.0 avg rating</p>
                         </div>
 
                         {/* Chip — bottom left */}
@@ -454,7 +502,7 @@ export function Footer() {
     ]
 
     return (
-        <footer className="border-t border-neutral-400 px-5 sm:px-10 lg:px-16 pt-12 pb-6 font-mono">
+        <footer className="border-t border-neutral-100 px-5 sm:px-10 lg:px-16 pt-12 pb-6 font-mono">
             <div className="flex flex-col sm:flex-row justify-between gap-10 sm:gap-8 max-w-6xl mx-auto">
                 <div className="flex flex-col gap-3 shrink-0 max-w-[200px]">
                     <p className="font-bold text-black text-base">TopCat</p>
@@ -482,7 +530,7 @@ export function Footer() {
                 </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-between items-center border-t border-neutral-400 mt-8 pt-5 gap-3 max-w-6xl mx-auto">
+            <div className="flex flex-col sm:flex-row justify-between items-center border-t border-neutral-100 mt-8 pt-5 gap-3 max-w-6xl mx-auto">
                 <p className="text-[11px] text-neutral-400">© 2026 TopCat. All rights reserved.</p>
                 <div className="flex gap-6">
                     {["Instagram", "Facebook", "TikTok"].map((s) => (
