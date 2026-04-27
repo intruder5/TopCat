@@ -99,8 +99,8 @@ function SectionLabel({ text, light = false }: { text: string; light?: boolean }
 
 export function Navbar() {
     return (
-        <header className="flex items-center w-full justify-between px-5 sm:px-10 sticky top-0 bg-white/90 h-14 backdrop-blur-md border-b border-neutral-100 z-50">
-            <img className="h-8 w-auto" src="/topcat.png" alt="TopCat logo" />
+        <header className="flex items-center w-full justify-between px-5 sm:px-10 sticky top-0 bg-white/90 h-14 backdrop-blur-md border-b border-neutral-300 z-50">
+            <img className="h-20 w-auto" src="/topcat.png" alt="TopCat logo" />
 
             <nav className="hidden md:flex items-center gap-8">
                 {navItems.map((item) => (
@@ -146,13 +146,13 @@ export function Hero() {
             {/* Top headline band */}
             <div className="relative z-10 flex flex-col items-center text-center px-5 pt-16 pb-10 sm:pt-20 sm:pb-12 gap-5 max-w-4xl mx-auto">
                 <div className="inline-flex items-center gap-2 bg-neutral-50 border border-neutral-200 rounded-full px-3.5 py-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0 animate-ping" />
                     <p className="font-mono text-[10px] text-neutral-500 tracking-wide">Now available in your area</p>
                 </div>
 
                 <h1 className="font-bold font-mono leading-[1.08] tracking-tight text-[2.8rem] sm:text-6xl lg:text-7xl">
                     Premium pet grooming,{" "}
-                    <span className="underline decoration-wavy decoration-pink-400 decoration-[3px] underline-offset-[8px]">
+                    <span className="decoration-[3px] underline-offset-[8px]">
                         delivered.
                     </span>
                 </h1>
@@ -198,7 +198,7 @@ export function Hero() {
                             <div className="flex items-center gap-1 mb-0.5">
                                 <Stars />
                             </div>
-                            <p className="font-mono text-[10px] text-neutral-500">5.0 avg rating</p>
+                            <p className="font-mono text-[10px] text-neutral-500">4.5 avg rating</p>
                         </div>
 
                         {/* Chip — bottom left */}
@@ -382,7 +382,7 @@ export function Reviews() {
                         className="bg-neutral-950 p-6 sm:p-7 flex flex-col gap-4 hover:bg-neutral-900 transition-colors duration-300"
                     >
                         <Stars />
-                        <p className="font-mono text-neutral-400 text-xs leading-[1.9] flex-1">"{review.quote}"</p>
+                        <p className="font-mono text-neutral-400 text-xs leading-[1.9] flex-1">{review.quote}</p>
                         <div className="pt-4 border-t border-neutral-800">
                             <p className="font-mono text-white font-bold text-xs">{review.name}</p>
                             <p className="font-mono text-neutral-600 text-[11px] mt-0.5">{review.title}</p>
@@ -454,7 +454,7 @@ export function Footer() {
     ]
 
     return (
-        <footer className="border-t border-neutral-100 px-5 sm:px-10 lg:px-16 pt-12 pb-6 font-mono">
+        <footer className="border-t border-neutral-400 px-5 sm:px-10 lg:px-16 pt-12 pb-6 font-mono">
             <div className="flex flex-col sm:flex-row justify-between gap-10 sm:gap-8 max-w-6xl mx-auto">
                 <div className="flex flex-col gap-3 shrink-0 max-w-[200px]">
                     <p className="font-bold text-black text-base">TopCat</p>
@@ -482,7 +482,7 @@ export function Footer() {
                 </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-between items-center border-t border-neutral-100 mt-8 pt-5 gap-3 max-w-6xl mx-auto">
+            <div className="flex flex-col sm:flex-row justify-between items-center border-t border-neutral-400 mt-8 pt-5 gap-3 max-w-6xl mx-auto">
                 <p className="text-[11px] text-neutral-400">© 2026 TopCat. All rights reserved.</p>
                 <div className="flex gap-6">
                     {["Instagram", "Facebook", "TikTok"].map((s) => (
